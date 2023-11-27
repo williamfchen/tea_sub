@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-
-  # Defines the root path route ("/")
-  # root "articles#index"
+  post '/customers/:customer_id/subscriptions', to: 'subscriptions#create'
+  patch '/subscriptions/:id/cancel', to: 'subscriptions#cancel'
+  get '/customers/:customer_id/subscriptions', to: 'subscriptions#index'
 end
