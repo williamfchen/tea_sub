@@ -50,4 +50,44 @@ All endpoints are prefixed with `/api/v1`.
   - `customer_id` (Integer): ID of the customer whose subscriptions are being requested.
 
 ### Setup
-To run locally, enter `rails s` in your terminal.  The port is set to 3000 for http://localhost:3000/
+Fork and clone this repo.  Run `bundle install` to install gems.  To run locally, enter `rails s` in your terminal under the tea_sub directory.  The port is set to 3000 for http://localhost:3000/
+
+### Testing
+This application uses RSpec.  Run `bundle exec rspec` to use the test suite.  After completion, `open coverage/index.html` to see the SimpleCov coverage report.
+
+### Schema
+```ruby
+create_table "customers", force: :cascade do |t|
+    t.string "first_name"
+    t.string "last_name"
+    t.string "email"
+    t.string "address"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "subscriptions", force: :cascade do |t|
+    t.string "title"
+    t.string "price"
+    t.string "status"
+    t.string "frequency"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "customer_id", null: false
+    t.bigint "tea_id", null: false
+    t.index ["customer_id"], name: "index_subscriptions_on_customer_id"
+    t.index ["tea_id"], name: "index_subscriptions_on_tea_id"
+  end
+
+  create_table "teas", force: :cascade do |t|
+    t.string "title"
+    t.string "description"
+    t.string "temperature"
+    t.string "brew_time"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_foreign_key "subscriptions", "customers"
+  add_foreign_key "subscriptions", "teas"
+```
