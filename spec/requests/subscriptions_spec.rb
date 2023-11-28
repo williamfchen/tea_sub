@@ -1,9 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe "Subscriptions", type: :request do
-  let!(:customer) { Customer.create(first_name: "Will", last_name: "Doe", email: "will@will.com", address: "454 Denver St") }
+  let!(:customer) { Customer.create!(first_name: "Will", last_name: "Doe", email: "will@will.com", address: "454 Denver St") }
 
-  let!(:tea) { Tea.create(title: "Oolong Tea", description: "Great tasting tea", temperature: "80°C", brew_time: "3 minutes") }
+  let!(:tea) { Tea.create!(title: "Oolong Tea", description: "Great tasting tea", temperature: "80°C", brew_time: "3 minutes") }
 
   before do
     @subscription1 = Subscription.create!(title: "Monthly Tea", price: "10.00", status: "active", frequency: "monthly", customer: customer, tea: tea)
@@ -22,6 +22,18 @@ RSpec.describe "Subscriptions", type: :request do
     it "returns all subscriptions for the customer" do
       expect(JSON.parse(response.body).size).to eq(2)
     end
+
+    it "returns subscriptions with the correct attributes" do
+      json = JSON.parse(response.body)
+      expect(json).to have_key("data")
+      expect(json["data"]).to be_an(Array)
+      expect(json["data"].first["attributes"]).to have_key("title")
+      expect(json["data"].first["attributes"]).to have_key("price")
+      expect(json["data"].first["attributes"]).to have_key("status")
+      expect(json["data"].first["attributes"]).to have_key("frequency")
+      expect(json).to have_key("included")
+      expect(response.content_type).to include("application/json")
+    end
   end
 
   describe "POST /create" do
@@ -32,13 +44,22 @@ RSpec.describe "Subscriptions", type: :request do
     context "with valid parameters" do
       it "creates a new Subscription" do
         expect {
-          post "/customers/#{customer.id}/subscriptions", params: { subscription: valid_attributes }
+          post "/customers/#{customer.id}/subscriptions", params: valid_attributes 
         }.to change(Subscription, :count).by(1)
       end
   
       it "renders a JSON response with the new subscription" do
-        post "/customers/#{customer.id}/subscriptions", params: { subscription: valid_attributes }
+        post "/customers/#{customer.id}/subscriptions", params: valid_attributes 
         expect(response).to have_http_status(:created)
+
+        json = JSON.parse(response.body)
+        expect(json).to have_key("data")
+        expect(json["data"]).to have_key("attributes")
+        expect(json["data"]["attributes"]).to have_key("title")
+        expect(json["data"]["attributes"]).to have_key("price")
+        expect(json["data"]["attributes"]).to have_key("status")
+        expect(json["data"]["attributes"]).to have_key("frequency")
+        expect(json).to have_key("included")
         expect(response.content_type).to include("application/json")
       end
     end

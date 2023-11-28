@@ -4,7 +4,7 @@ class SubscriptionsController < ApplicationController
     subscription = customer.subscriptions.new(subscription_params)
 
     if subscription.save
-      render json: SubscriptionSerializer.new(subscription), status: :created
+      render json: SubscriptionSerializer.new(subscription, include: [:customer, :tea]), status: :created
     else
       render json: subscription.errors
     end
@@ -27,6 +27,6 @@ class SubscriptionsController < ApplicationController
   private
 
   def subscription_params
-    params.require(:subscription).permit(:title, :price, :status, :frequency, :tea_id)
+    params.permit(:title, :price, :status, :frequency, :tea_id)
   end
 end
