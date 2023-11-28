@@ -14,7 +14,7 @@
       <img src="./assets/0.12.3/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" class="hide">
-      <div class="timestamp">Generated <abbr class="timeago" title="2023-11-28T08:42:08-07:00">2023-11-28T08:42:08-07:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2023-11-28T08:50:50-07:00">2023-11-28T08:50:50-07:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -23,14 +23,14 @@
     <span class="group_name">All Files</span>
     (<span class="covered_percent">
       <span class="green">
-  99.35%
+  99.36%
 </span>
 
      </span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         1.3
+         1.29
        </span>
     </span> hits/line
     )
@@ -43,11 +43,11 @@
   </div>
 
   <div class="t-line-summary">
-    <b>155</b> relevant lines,
-    <span class="green"><b>154</b> lines covered</span> and
+    <b>157</b> relevant lines,
+    <span class="green"><b>156</b> lines covered</span> and
     <span class="red"><b>1</b> lines missed. </span>
     (<span class="green">
-  99.35%
+  99.36%
 </span>
 )
   </div>
@@ -71,6 +71,17 @@
       <tbody>
         
           <tr class="t-file">
+            <td class="strong t-file__name"><a href="#589425a79680c526ffe8db5c860b354fa6598133" class="src_link" title="app/controllers/api/v1/subscriptions_controller.rb">app/controllers/api/v1/subscriptions_controller.rb</a></td>
+            <td class="green strong cell--number t-file__coverage">94.44 %</td>
+            <td class="cell--number">32</td>
+            <td class="cell--number">18</td>
+            <td class="cell--number">17</td>
+            <td class="cell--number">1</td>
+            <td class="cell--number">1.72</td>
+            
+          </tr>
+        
+          <tr class="t-file">
             <td class="strong t-file__name"><a href="#3273704574006bec94f050857668e552b6732175" class="src_link" title="app/controllers/application_controller.rb">app/controllers/application_controller.rb</a></td>
             <td class="green strong cell--number t-file__coverage">100.00 %</td>
             <td class="cell--number">2</td>
@@ -78,17 +89,6 @@
             <td class="cell--number">1</td>
             <td class="cell--number">0</td>
             <td class="cell--number">1.00</td>
-            
-          </tr>
-        
-          <tr class="t-file">
-            <td class="strong t-file__name"><a href="#b9a71e162b50f492ca833c2c30062daf83987a20" class="src_link" title="app/controllers/subscriptions_controller.rb">app/controllers/subscriptions_controller.rb</a></td>
-            <td class="green strong cell--number t-file__coverage">94.44 %</td>
-            <td class="cell--number">32</td>
-            <td class="cell--number">18</td>
-            <td class="cell--number">17</td>
-            <td class="cell--number">1</td>
-            <td class="cell--number">1.72</td>
             
           </tr>
         
@@ -249,9 +249,9 @@
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#0de93cd61d7cc715c1a6d0e0e11df40162461ab5" class="src_link" title="config/routes.rb">config/routes.rb</a></td>
             <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">5</td>
-            <td class="cell--number">4</td>
-            <td class="cell--number">4</td>
+            <td class="cell--number">11</td>
+            <td class="cell--number">6</td>
+            <td class="cell--number">6</td>
             <td class="cell--number">0</td>
             <td class="cell--number">1.00</td>
             
@@ -340,62 +340,9 @@
 
       <div class="source_files">
       
-        <div class="source_table" id="3273704574006bec94f050857668e552b6732175">
+        <div class="source_table" id="589425a79680c526ffe8db5c860b354fa6598133">
   <div class="header">
-    <h3>app/controllers/application_controller.rb</h3>
-    <h4>
-      <span class="green">
-  100.0%
-</span>
-
-      lines covered
-    </h4>
-
-    
-
-    <div class="t-line-summary">
-      <b>1</b> relevant lines.
-      <span class="green"><b>1</b> lines covered</span> and
-      <span class="red"><b>0</b> lines missed.</span>
-    </div>
-
-    
-
-  </div>
-
-  <pre>
-    <ol>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="1">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">class ApplicationController &lt; ActionController::API</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="2">
-            
-            
-
-            
-
-            <code class="ruby">end</code>
-          </li>
-        </div>
-      
-    </ol>
-  </pre>
-</div>
-
-      
-        <div class="source_table" id="b9a71e162b50f492ca833c2c30062daf83987a20">
-  <div class="header">
-    <h3>app/controllers/subscriptions_controller.rb</h3>
+    <h3>app/controllers/api/v1/subscriptions_controller.rb</h3>
     <h4>
       <span class="green">
   94.44%
@@ -426,7 +373,7 @@
 
             
 
-            <code class="ruby">class SubscriptionsController &lt; ApplicationController</code>
+            <code class="ruby">class Api::V1::SubscriptionsController &lt; ApplicationController</code>
           </li>
         </div>
       
@@ -762,6 +709,59 @@
       
         <div>
           <li class="never" data-hits="" data-linenumber="32">
+            
+            
+
+            
+
+            <code class="ruby">end</code>
+          </li>
+        </div>
+      
+    </ol>
+  </pre>
+</div>
+
+      
+        <div class="source_table" id="3273704574006bec94f050857668e552b6732175">
+  <div class="header">
+    <h3>app/controllers/application_controller.rb</h3>
+    <h4>
+      <span class="green">
+  100.0%
+</span>
+
+      lines covered
+    </h4>
+
+    
+
+    <div class="t-line-summary">
+      <b>1</b> relevant lines.
+      <span class="green"><b>1</b> lines covered</span> and
+      <span class="red"><b>0</b> lines missed.</span>
+    </div>
+
+    
+
+  </div>
+
+  <pre>
+    <ol>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="1">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">class ApplicationController &lt; ActionController::API</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="2">
             
             
 
@@ -3182,8 +3182,8 @@
     
 
     <div class="t-line-summary">
-      <b>4</b> relevant lines.
-      <span class="green"><b>4</b> lines covered</span> and
+      <b>6</b> relevant lines.
+      <span class="green"><b>6</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
 
@@ -3212,7 +3212,7 @@
 
             
 
-            <code class="ruby">  post &#39;/customers/:customer_id/subscriptions&#39;, to: &#39;subscriptions#create&#39;</code>
+            <code class="ruby">  namespace :api do</code>
           </li>
         </div>
       
@@ -3223,7 +3223,7 @@
 
             
 
-            <code class="ruby">  patch &#39;/subscriptions/:id/cancel&#39;, to: &#39;subscriptions#cancel&#39;</code>
+            <code class="ruby">    namespace :v1 do</code>
           </li>
         </div>
       
@@ -3234,12 +3234,78 @@
 
             
 
-            <code class="ruby">  get &#39;/customers/:customer_id/subscriptions&#39;, to: &#39;subscriptions#index&#39;</code>
+            <code class="ruby">      post &#39;/customers/:customer_id/subscriptions&#39;, to: &#39;subscriptions#create&#39;</code>
           </li>
         </div>
       
         <div>
           <li class="never" data-hits="" data-linenumber="5">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="6">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">      patch &#39;/subscriptions/:id/cancel&#39;, to: &#39;subscriptions#cancel&#39;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="7">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="8">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">      get &#39;/customers/:customer_id/subscriptions&#39;, to: &#39;subscriptions#index&#39;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="9">
+            
+            
+
+            
+
+            <code class="ruby">    end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="10">
+            
+            
+
+            
+
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="11">
             
             
 
@@ -3959,7 +4025,7 @@
 
             
 
-            <code class="ruby">      get &quot;/customers/#{customer.id}/subscriptions&quot;</code>
+            <code class="ruby">      get &quot;/api/v1/customers/#{customer.id}/subscriptions&quot;</code>
           </li>
         </div>
       
@@ -4311,7 +4377,7 @@
 
             
 
-            <code class="ruby">          post &quot;/customers/#{customer.id}/subscriptions&quot;, params: valid_attributes </code>
+            <code class="ruby">          post &quot;/api/v1/customers/#{customer.id}/subscriptions&quot;, params: valid_attributes </code>
           </li>
         </div>
       
@@ -4366,7 +4432,7 @@
 
             
 
-            <code class="ruby">        post &quot;/customers/#{customer.id}/subscriptions&quot;, params: valid_attributes </code>
+            <code class="ruby">        post &quot;/api/v1/customers/#{customer.id}/subscriptions&quot;, params: valid_attributes </code>
           </li>
         </div>
       
@@ -4575,7 +4641,7 @@
 
             
 
-            <code class="ruby">        patch &quot;/subscriptions/#{@subscription1.id}/cancel&quot;</code>
+            <code class="ruby">        patch &quot;/api/v1/subscriptions/#{@subscription1.id}/cancel&quot;</code>
           </li>
         </div>
       
@@ -4641,7 +4707,7 @@
 
             
 
-            <code class="ruby">        patch &quot;/subscriptions/#{@subscription1.id}/cancel&quot;</code>
+            <code class="ruby">        patch &quot;/api/v1/subscriptions/#{@subscription1.id}/cancel&quot;</code>
           </li>
         </div>
       

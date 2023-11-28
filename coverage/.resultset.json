@@ -210,6 +210,12 @@
           1,
           1,
           1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          null,
           null
         ]
       },
@@ -357,7 +363,7 @@
           null
         ]
       },
-      "/Users/willchen/turing_work/4mod/exercises/tea_sub/app/controllers/subscriptions_controller.rb": {
+      "/Users/willchen/turing_work/4mod/exercises/tea_sub/app/controllers/api/v1/subscriptions_controller.rb": {
         "lines": [
           1,
           1,
@@ -427,6 +433,6 @@
         ]
       }
     },
-    "timestamp": 1701186128
+    "timestamp": 1701186650
   }
 }

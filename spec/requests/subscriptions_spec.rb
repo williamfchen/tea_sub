@@ -12,7 +12,7 @@ RSpec.describe "Subscriptions", type: :request do
 
   describe "GET /index" do
     before do
-      get "/customers/#{customer.id}/subscriptions"
+      get "/api/v1/customers/#{customer.id}/subscriptions"
     end
 
     it "returns a success response" do
@@ -44,12 +44,12 @@ RSpec.describe "Subscriptions", type: :request do
     context "with valid parameters" do
       it "creates a new Subscription" do
         expect {
-          post "/customers/#{customer.id}/subscriptions", params: valid_attributes 
+          post "/api/v1/customers/#{customer.id}/subscriptions", params: valid_attributes 
         }.to change(Subscription, :count).by(1)
       end
   
       it "renders a JSON response with the new subscription" do
-        post "/customers/#{customer.id}/subscriptions", params: valid_attributes 
+        post "/api/v1/customers/#{customer.id}/subscriptions", params: valid_attributes 
         expect(response).to have_http_status(:created)
 
         json = JSON.parse(response.body)
@@ -68,13 +68,13 @@ RSpec.describe "Subscriptions", type: :request do
   describe "PATCH /cancel" do
     context "when the subscription exists" do
       it "updates the status of the subscription" do
-        patch "/subscriptions/#{@subscription1.id}/cancel"
+        patch "/api/v1/subscriptions/#{@subscription1.id}/cancel"
         @subscription1.reload
         expect(@subscription1.status).to eq('cancelled')
       end
 
       it "renders a JSON response with the updated subscription" do
-        patch "/subscriptions/#{@subscription1.id}/cancel"
+        patch "/api/v1/subscriptions/#{@subscription1.id}/cancel"
         expect(response).to be_successful
         expect(response.content_type).to include("application/json")
       end
